@@ -1,7 +1,9 @@
 ### PLOT 3 ###
 
+library(data.table)
+
 ## Getting the entire dataset : Electric power consumption
-data_entire <- read.csv("/Users/salimahmokhtar/household_power_consumption.txt", header=TRUE, sep=';', na.strings="?",nrows=2075259, check.names=FALSE, stringsAsFactors=FALSE, comment.char="", quote='\"')
+data_entire <- fread ("/Users/salimahmokhtar/household_power_consumption.txt", header=TRUE, sep=';', na.strings="?",nrows=2075259, check.names=FALSE, stringsAsFactors=FALSE, comment.char="", quote='\"')
 
 data_entire$Date <- as.Date(data_entire$Date, format="%d/%m/%Y")
 
